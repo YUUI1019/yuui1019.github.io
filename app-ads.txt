@@ -1,0 +1,2 @@
+# AdMob（アプリ版）用。https://yuui1019.github.io/app-ads.txt に置く（ストアの「デベロッパーのウェブサイト」と同じドメインの直下）
+google.com, pub-2964043284573624, DIRECT, f08c47fec0942fa0
