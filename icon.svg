@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf7a"/><stop offset="0.55" stop-color="#f6905a"/><stop offset="1" stop-color="#d9644a"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6e5a5c"/><stop offset="1" stop-color="#34343a"/>
+    </linearGradient>
+    <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3df"/><stop offset="1" stop-color="#f4f2ea"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.55" r="0.75">
+      <stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.35"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0"/>
+    </filter>
+    <clipPath id="roadClip"><polygon points="392,330 632,330 1200,1024 -176,1024"/></clipPath>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#sky)"/>
+  <!-- 遠くの家並み -->
+  <path d="M0 330 L0 268 L70 268 L70 236 L118 206 L166 236 L166 268 L250 268 L250 250 L300 222 L350 250 L350 290 L392 290 L392 330 Z
+           M632 330 L632 282 L690 282 L690 246 L742 214 L794 246 L794 270 L880 270 L880 236 L950 236 L950 262 L1024 262 L1024 330 Z" fill="#b8584a" opacity="0.55"/>
+  <!-- 道路 -->
+  <polygon points="392,330 632,330 1200,1024 -176,1024" fill="url(#road)"/>
+  <rect width="1024" height="1024" filter="url(#grain)" clip-path="url(#roadClip)" opacity="0.35"/>
+  <!-- 路側の白線 -->
+  <polygon points="398,330 410,330 40,1024 -40,1024" fill="url(#paint)" opacity="0.9"/>
+  <polygon points="614,330 626,330 1064,1024 984,1024" fill="url(#paint)" opacity="0.9"/>
+  <!-- 横断歩道 -->
+  <g fill="url(#paint)" opacity="0.95">
+    <polygon points="374,398 650,398 664,424 360,424"/>
+    <polygon points="352,448 672,448 690,480 334,480"/>
+  </g>
+  <!-- 中央の白線（歩いている線） -->
+  <polygon points="504,480 520,480 566,1024 458,1024" fill="url(#paint)"/>
+
+  <!-- 長い影（夕日） -->
+  <ellipse cx="652" cy="760" rx="190" ry="30" transform="rotate(-32 520 868)" fill="#2a1630" opacity="0.32"/>
+  <ellipse cx="512" cy="872" rx="78" ry="18" fill="#000" opacity="0.35"/>
+
+  <!-- 子ども（後ろ姿） -->
+  <g>
+    <!-- 腕（両手を広げてバランス） -->
+    <g transform="rotate(58 452 612)"><rect x="438" y="600" width="28" height="36" rx="10" fill="#fff"/><rect x="441" y="630" width="22" height="72" rx="11" fill="#f2c69c"/></g>
+    <g transform="rotate(-58 572 612)"><rect x="558" y="600" width="28" height="36" rx="10" fill="#fff"/><rect x="561" y="630" width="22" height="72" rx="11" fill="#f2c69c"/></g>
+    <!-- 足 -->
+    <rect x="472" y="756" width="26" height="86" fill="#f2c69c"/>
+    <rect x="526" y="740" width="26" height="86" fill="#f2c69c"/>
+    <rect x="472" y="820" width="26" height="22" fill="#fafafa"/>
+    <rect x="526" y="804" width="26" height="22" fill="#fafafa"/>
+    <rect x="466" y="840" width="38" height="26" rx="10" fill="#2d3550"/>
+    <rect x="520" y="824" width="38" height="26" rx="10" fill="#2d3550"/>
+    <!-- 半ズボン・体 -->
+    <rect x="456" y="694" width="112" height="68" rx="16" fill="#25345c"/>
+    <rect x="452" y="586" width="120" height="120" rx="22" fill="#fff"/>
+    <!-- 首・髪 -->
+    <rect x="496" y="556" width="32" height="34" fill="#f2c69c"/>
+    <circle cx="512" cy="520" r="56" fill="#2a211c"/>
+    <!-- ランドセル -->
+    <rect x="436" y="566" width="152" height="164" rx="32" fill="#c81f35"/>
+    <rect x="436" y="566" width="152" height="104" rx="32" fill="#e0334a"/>
+    <rect x="436" y="652" width="152" height="12" fill="#9e1528"/>
+    <rect x="456" y="580" width="54" height="16" rx="8" fill="#fff" opacity="0.3"/>
+    <rect x="494" y="640" width="36" height="30" rx="8" fill="#e8c547"/>
+    <circle cx="574" cy="702" r="12" fill="#ffd93b"/>
+    <!-- 黄色い帽子 -->
+    <ellipse cx="512" cy="522" rx="84" ry="28" fill="#f2c21c"/>
+    <path d="M450 512 A62 62 0 0 1 574 512 Z" fill="#ffd23f"/>
+    <rect x="450" y="504" width="124" height="12" fill="#e2b012"/>
+    <ellipse cx="490" cy="474" rx="18" ry="9" fill="#fff" opacity="0.35"/>
+  </g>
+
+  <rect width="1024" height="1024" fill="url(#vig)"/>
+</svg>
